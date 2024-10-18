@@ -24,13 +24,15 @@ export default function Login() {
 
   const LoginApi = (e) => {
     e.preventDefault()
-
+    var data = loginData
+    data['role'] = "customer"
     setLoader(true)
-    axios.post("auth/login", loginData).then(response => {
+    axios.post("auth/login", data).then(response => {
       // console.log(response)
       setErrors([])
       setToken(response.data.data.tokens.access);
       setUserDetail(JSON.stringify(response.data.data.user));
+      setLoginData({})
       setLoader(false)
     }).catch(error => {
       console.log(error)

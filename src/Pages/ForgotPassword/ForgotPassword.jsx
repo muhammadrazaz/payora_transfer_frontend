@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from '../../Api/axios'
 import { useAuth } from '../../Provider/AuthProvider'
 import Loader from '../../Components/Loader/Loader'
-
+import { useNavigate } from 'react-router-dom';
 export default function ForgotPassword() {
   const [forgotData, setForgotData] = useState({})
   const [errors, setErrors] = useState([])
@@ -11,6 +11,7 @@ export default function ForgotPassword() {
   const [otpData, setOtpData] = useState({})
   const [isNewPassowrd, setIsNewPassword] = useState(false)
   const [newPasswordData, setNewPasswordData] = useState({})
+  const navigate = useNavigate()
 
   const handleForgotChange = (e) => {
     const { name, value } = e.target
@@ -109,7 +110,7 @@ export default function ForgotPassword() {
         setIsNewPassword(false)
         setErrors([])
         alert('Password reset successfully')
-
+        navigate('/')
         setLoader(false)
       }).catch(error => {
         console.log(error)
