@@ -234,7 +234,9 @@ export default function ForgotPassword() {
                 />
               </div>
 
-
+              {errors.length > 0 && errors.split(',').map((data, index) => {
+                  return <p className='m-0' style={{ fontSize: '10px', color: 'red' }}>{data}</p>
+                })}
               <div className="input-group mb-3">
                 <button type="submit" className="btn btn-lg w-100 fs-6 text-white" style={{ background: "#9d0208ff" }}>
                   Next
