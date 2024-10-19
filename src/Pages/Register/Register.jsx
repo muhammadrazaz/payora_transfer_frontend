@@ -40,12 +40,8 @@ export default function Register() {
         
       }).catch(error => {
         console.log("error",error)
-        if ( error.response.status === 400 || error.response.status === 404 || error.response.status === 403 || error.response.status === 406) {
-          console.log(error.response.data.errorMessage)
-          error.response.data.errorMessage.split(',').map((data,index)=>{
-
-            console.log(data)
-          })
+        if ( error.response.status === 400 || error.response.status === 401 || error.response.status === 403 || error.response.status === 404 || error.response.status === 406) {
+         
           setErrors(error.response.data.errorMessage)
           
         }
@@ -70,7 +66,11 @@ export default function Register() {
        
       })
       .catch((error) => {
-        console.error("Error:", error);
+        if ( error.response.status === 400 || error.response.status === 401 || error.response.status === 403 || error.response.status === 404 || error.response.status === 406) {
+         
+          setErrors(error.response.data.errorMessage)
+          
+        }
         setLoader(false)
       });
   };
