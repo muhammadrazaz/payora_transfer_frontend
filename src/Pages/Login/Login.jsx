@@ -29,6 +29,7 @@ export default function Login() {
     setLoader(true)
     axios.post("auth/login", data).then(response => {
       // console.log(response)
+      
       setErrors([])
       setToken(response.data.data.tokens.access);
       setUserDetail(JSON.stringify(response.data.data.user));
@@ -36,7 +37,7 @@ export default function Login() {
       setLoader(false)
     }).catch(error => {
       console.log(error)
-      if (error.response.status === 400) {
+      if (error.response.status === 400 || error.response.status === 404 || error.response.status === 403 || error.response.status === 406) {
         setErrors(error.response.data.errorMessage)
       }
       else {

@@ -55,7 +55,7 @@ export default function ForgotPassword() {
         setLoader(false)
       }).catch(error => {
         console.log(error)
-        if (error.response.status === 400) {
+        if (error.response.status === 400 || error.response.status === 404 || error.response.status === 403 || error.response.status === 406) {
           setErrors(error.response.data.errorMessage)
         }
         else {
@@ -84,7 +84,7 @@ export default function ForgotPassword() {
         setLoader(false)
       }).catch(error => {
         console.log(error)
-        if (error.response.status === 400) {
+        if (error.response.status === 400 || error.response.status === 404 || error.response.status === 403 || error.response.status === 406) {
           setErrors(error.response.data.errorMessage)
         }
         else {
@@ -99,22 +99,22 @@ export default function ForgotPassword() {
 
     setLoader(true)
     var data = newPasswordData
-    data['email'] = newPasswordData.email
+    data['email'] = forgotData.email
 
     data['role'] = "customer"
-
+    console.log(data)
 
     axios.post("/auth/reset-password/", data)
       .then(response => {
         console.log(response)
         setIsNewPassword(false)
         setErrors([])
-        alert('Password reset successfully')
+        // alert('Password reset successfully')
         navigate('/')
         setLoader(false)
       }).catch(error => {
         console.log(error)
-        if (error.response.status === 400) {
+        if (error.response.status === 400 || error.response.status === 404 || error.response.status === 403 || error.response.status === 406) {
           setErrors(error.response.data.errorMessage)
         }
         else {
@@ -211,9 +211,7 @@ export default function ForgotPassword() {
 
               <div>
 
-                {errors.length > 0 && errors.split(',').map((data, index) => {
-                  return <p className='m-0' style={{ fontSize: '10px', color: 'red' }}>{data}</p>
-                })}
+               
               </div>
               <div className="input-group mb-3">
                 <button type="submit" className="btn btn-lg w-100 fs-6 text-white" style={{ background: "#9d0208ff" }}>
@@ -247,7 +245,7 @@ export default function ForgotPassword() {
             {isNewPassowrd && <form id="loginForm" onSubmit={newPasswordApi}>
               <div className="input-group mb-3">
                 <input
-                  type="text"
+                  type="password"
                   id="password"
                   name="password"
                   className="form-control form-control-lg bg-light fs-6"

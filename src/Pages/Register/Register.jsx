@@ -29,14 +29,18 @@ export default function Register() {
     axios.post('/auth/signUp', registerData)
       .then(response => {
         console.log(response)
-        setToken(response.data.data.tokens.access);
-          setUserDetail(JSON.stringify(response.data.data.user));
-          setErrors([])
-          navigate('/')
-        setLoader(false)
+       
+
+          setToken(response.data.data.tokens.access);
+            setUserDetail(JSON.stringify(response.data.data.user));
+            setErrors([])
+            navigate('/')
+          setLoader(false)
+      
+        
       }).catch(error => {
         console.log("error",error)
-        if (error.response.status === 400) {
+        if ( error.response.status === 400 || error.response.status === 404 || error.response.status === 403 || error.response.status === 406) {
           console.log(error.response.data.errorMessage)
           error.response.data.errorMessage.split(',').map((data,index)=>{
 
