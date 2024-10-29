@@ -16,6 +16,14 @@ const Routes = () => {
   // Define routes accessible only to non-authenticated users
   const routesForNotAuthenticatedOnly = [
     {
+      path: "/",
+      element: <Home />
+    },
+    {
+      path: "/pay-bills",
+      element: <PayBill/>
+    },
+    {
       path: "/login",
       element: <Login />
     },
@@ -29,14 +37,8 @@ const Routes = () => {
       path: "/forgot-password",
       element: <ForgotPassword />
     },
-    {
-      path: "/",
-      element: <Home />
-    },
-    {
-      path: "/pay-bills",
-      element: <PayBill />
-    },
+    
+    
 
     // {
     //   path: "/forgot-password",

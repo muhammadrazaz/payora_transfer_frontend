@@ -8,7 +8,7 @@ export default function PayBill() {
         <>
             <Header />
             <div className='pay-bills'>
-                <div className="row p-sm-5">
+                <div className="row p-sm-5 p-1">
                     <div className="col-md-8">
                         <Card>
                             <p id='invoice-info'>Invoice <span style={{color:'#9d0208ff'}}>#42D42-0001</span> <span style={{ fontSize: '16px', fontWeight: '500' }}>for</span> $2250.65 </p>

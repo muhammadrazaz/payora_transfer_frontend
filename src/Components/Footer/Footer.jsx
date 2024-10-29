@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className='mx-1'>
     <div className="section__container footer__container">
       <div className="footer__col">
         <h4>Money transfer</h4>
