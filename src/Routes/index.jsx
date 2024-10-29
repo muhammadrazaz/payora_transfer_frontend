@@ -6,6 +6,7 @@ import Register from '../Pages/Register/Register'
 import Home from "../Pages/Home/Home";
 import PayBill from "../Pages/PayBill/PayBill";
 import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
+import AuthPage from "../Pages/AuthPage/AuthPage";
 
 const Routes = () => {
   const { token, userDetail } = useAuth();
@@ -14,15 +15,19 @@ const Routes = () => {
 
 
   // Define routes accessible only to non-authenticated users
-  const routesForNotAuthenticatedOnly = [
+
+  const routesForAll = [
     {
       path: "/",
       element: <Home />
     },
     {
       path: "/pay-bills",
-      element: <PayBill/>
+      element: <PayBill />
     },
+  ]
+  const routesForNotAuthenticatedOnly = [
+
     {
       path: "/login",
       element: <Login />
@@ -37,8 +42,8 @@ const Routes = () => {
       path: "/forgot-password",
       element: <ForgotPassword />
     },
-    
-    
+
+
 
     // {
     //   path: "/forgot-password",
@@ -54,11 +59,11 @@ const Routes = () => {
   ];
   const routesForAuthenticatedOnly = [
     {
-      path: "/",
-      element: <Home />
+      path: "/auth",
+      element: <AuthPage />
     },
 
- 
+
     // {
     //   path: "/forgot-password",
     //   element: <ForgotPassword />
@@ -74,12 +79,12 @@ const Routes = () => {
 
 
   const router = createBrowserRouter([
+    ...routesForAll,
+    ...(!token ? routesForNotAuthenticatedOnly : []),
+    ...(token ? routesForAuthenticatedOnly : []),
 
-    ...(!token  ? routesForNotAuthenticatedOnly : []),
-    ...(token  ? routesForAuthenticatedOnly : []),
 
-    
-    
+
   ]);
 
   // Provide the router configuration using RouterProvider

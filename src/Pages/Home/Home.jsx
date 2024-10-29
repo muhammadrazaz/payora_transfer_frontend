@@ -153,7 +153,7 @@ export default function Home() {
         <div className="service__image">
           <img src="https://zil.us/wp-content/uploads/2022/08/Experience-The-Best-International-Money-Transfer-with-Zil-ZB.png" alt="service" />
         </div>
-        <div className="service__content mx-1">
+        <div className="service__content mx-3">
           <p className="section__subheader">BEST SERVICES</p>
           <h2 className="section__header">
             Feel the best experience with Payora

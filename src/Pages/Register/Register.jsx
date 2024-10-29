@@ -220,7 +220,7 @@ export default function Register() {
 
 
             <div class="row mt-3">
-              <small>already have an account? <a href="/">Sign In</a></small>
+              <small>already have an account? <a href="/login">Sign In</a></small>
             </div>
           </div>
         </div>

@@ -74,7 +74,7 @@ export default function Header() {
               Discover Payora money transfer options in Haiti
               Register now to get a better exchange rate and $0 fee on your first online transfer
             </p>
-            <button type="button" className="btn-crazy btn btn-lg" style={{background:'#9d0208ff'}}>
+            <button type="button" className="btn-crazy btn btn-lg mb-3 mb-sm-0" style={{background:'#9d0208ff'}}>
               Send money now
             </button>
           </div>
