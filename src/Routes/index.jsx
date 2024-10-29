@@ -30,7 +30,7 @@ const Routes = () => {
       element: <ForgotPassword />
     },
     {
-      path: "/home",
+      path: "/",
       element: <Home />
     },
     {

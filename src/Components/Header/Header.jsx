@@ -40,7 +40,7 @@ export default function Header() {
           </div>
           <ul className="nav__links" id="nav-links" onClick={handleNavlinkClick}>
             <li>
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
               </li>
             <li>
             <Link to="/pay-bills">Pay Bills</Link>
