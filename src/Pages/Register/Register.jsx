@@ -132,7 +132,7 @@ export default function Register() {
         <div class="col-md-6 right-box">
           <div class="row align-items-center">
             <div class="header-text mb-4">
-              <h2>Cash-Xpress</h2>
+              <h2>Payora</h2>
               <p>We are happy to have you back.</p>
             </div>
 

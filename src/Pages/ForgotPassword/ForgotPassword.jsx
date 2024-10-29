@@ -178,7 +178,7 @@ export default function ForgotPassword() {
         <div className="col-md-6 right-box">
           <div className="row align-items-center">
             <div className="header-text mb-4">
-              <h2>Cash-Xpress</h2>
+              <h2>Payora</h2>
               <p>We are happy to have you.</p>
             </div>
 

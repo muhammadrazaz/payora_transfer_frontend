@@ -1,0 +1,114 @@
+.pay-bills {
+    /* height: 300px; */
+    background-color: #F6F6F6;
+    position: relative; /* Required for positioning the ::after pseudo-element */
+}
+
+.pay-bills::after {
+    content: '';
+    height: 200px;
+    width: 100%;        
+    background-color: #03071eff;
+    position: absolute;
+    top: 0;          
+    left: 0;
+    display: block;     
+}
+
+.pay-bills #invoice-info{
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.pay-bills #open-text{
+    padding: 5px 10px;
+    background-color: rgb(253, 216, 217);
+    border-radius: 30px;
+}
+
+.pay-bills #invoice-btn div{
+    padding: 7px 25px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.pay-bills #invoice-btn div:first-child{
+    background-color: #03071eff;
+    color: white;
+}
+
+.pay-bills .history i{
+    padding: 3px 6px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: #9d0208ff;
+    color: white;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pay-bills .details i{
+    
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#invoice-pdf{
+    padding: 7px 25px;
+    /* border: 1px solid gray; */
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    background-color: #9d0208ff;
+    border: none;
+    color: white;
+}
+
+/* .hour-24{
+    padding: 0px 5px;
+    display: flex;
+    background-color: rgb(248, 194, 194);
+    width: fit-content;
+    font-size: 24px;
+    font-weight: 900;
+    border-radius: 5px;
+    color: red;
+} */
+
+.hour-24 {
+    display: inline-block;
+    padding: 0px 5px;
+    display: flex;
+    background-color: rgb(253, 216, 217);
+    width: fit-content;
+    font-size: 24px;
+    font-weight: 900;
+    border-radius: 5px;
+    color: #9d0208ff;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.hour-24::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 8px 0 8px;
+    border-color: rgb(253, 216, 217) transparent transparent transparent;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn{
+    padding: 0.50rem 1.5rem !important;
+}

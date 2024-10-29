@@ -4,6 +4,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import Login from "../Pages/Login/Login";
 import Register from '../Pages/Register/Register'
 import Home from "../Pages/Home/Home";
+import PayBill from "../Pages/PayBill/PayBill";
 import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
 
 const Routes = () => {
@@ -15,7 +16,7 @@ const Routes = () => {
   // Define routes accessible only to non-authenticated users
   const routesForNotAuthenticatedOnly = [
     {
-      path: "/",
+      path: "/login",
       element: <Login />
     },
 
@@ -27,6 +28,14 @@ const Routes = () => {
     {
       path: "/forgot-password",
       element: <ForgotPassword />
+    },
+    {
+      path: "/home",
+      element: <Home />
+    },
+    {
+      path: "/pay-bills",
+      element: <PayBill />
     },
 
     // {

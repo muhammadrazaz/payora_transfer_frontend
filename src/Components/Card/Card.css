@@ -1,0 +1,8 @@
+.custom-card{
+    background-color: white;
+    border-radius: 15px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    box-shadow: 1px 1px #e4e3e3;
+}

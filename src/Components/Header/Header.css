@@ -1,0 +1,12 @@
+.nav_logo {
+    margin: 0 !important;
+}
+.nav_logo a img{
+    border-radius: 0%;
+    /* max-width: 50%; */
+    width: 150px;
+    margin: 0;
+}
+.nav__links{
+    margin: 0;
+}
