@@ -119,10 +119,10 @@ export default function Home() {
     <>
       <Header/>
       
-      <section className="section__container steps__container" id="rent">
+      <section className="section__container steps__container " id="rent">
         <p className="section__subheader">HOW IT WORKS</p>
         <h2 className="section__header">Payora following 3 working steps</h2>
-        <div className="steps__grid">
+        <div className="steps__grid mx-3">
           <div className="steps__card">
             <span><i className="ri-map-pin-fill"></i></span>
             <h4>Send online</h4>
