@@ -68,7 +68,7 @@ export default function Header() {
           <div className="header__image">
             <img src="https://d27735ao2xxhhe.cloudfront.net/blog/pro/the-challenges-and-opportunities-of-cross-border-remittances-to-the-gambia-in-the-digital-age-1000x70064a6bf5a4509a1688649562.png" alt="header" />
           </div>
-          <div className="header__content mx-1 text-center text-sm-start">
+          <div className="header__content mx-1 text-center text-sm-start mx-3">
             <h1>Send and receive money in minutes with Payora</h1>
             <p>
               Discover Payora money transfer options in Haiti

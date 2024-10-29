@@ -192,7 +192,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section__container experience__container" id="ride">
+      <section className="section__container experience__container mx-3" id="ride">
         <p className="section__subheader">CUSTOMER EXPERIENCE</p>
         <h2 className="section__header">
           We are ensuring the best customer experience
