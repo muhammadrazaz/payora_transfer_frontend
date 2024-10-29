@@ -16,7 +16,7 @@ export default function PayBill() {
                                 <span id='open-text'>Open</span>
                                 <span className='ms-4'>Due next Month</span>
                             </div>
-                            <div className='mt-4 d-flex gap-3' id='invoice-btn'>
+                            <div className='mt-4 d-flex gap-3 flex-sm-row flex-column' id='invoice-btn'>
                                 <div >Send Invoice</div>
                                 <div >Edit Invoice</div>
                                 <div >Add Note</div>
