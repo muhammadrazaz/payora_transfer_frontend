@@ -3,7 +3,7 @@ import { useAuth } from "../Provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-export const ProtectedRoute = (children) => {
+export const ProtectedRoute = ({children}) => {
     const { token,userDetail } = useAuth();
     const navigate = useNavigate()
 
@@ -14,7 +14,7 @@ export const ProtectedRoute = (children) => {
       return <Navigate to="/" />;
     }
 
-    // return children;
+    return children;
     // If authenticated, render the child routes
     return <Outlet />;
   };

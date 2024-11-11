@@ -37,9 +37,9 @@ export default function Login() {
       setLoginData({})
       setLoader(false)
 
-      setTimeout(()=>{
-        navigate('/profile')
-      },1000)
+      // setTimeout(()=>{
+        navigate('/')
+      // },1000)
      
     }).catch(error => {
       console.log(error)
@@ -68,9 +68,9 @@ export default function Login() {
           setUserDetail(JSON.stringify(response.data.data.user));
           // navigate('/')
           setLoader(false)
-          setTimeout(()=>{
-            navigate('/profile')
-          },1000)
+          // setTimeout(()=>{
+            navigate('/')
+          // },1000)
        
       })
       .catch((error) => {

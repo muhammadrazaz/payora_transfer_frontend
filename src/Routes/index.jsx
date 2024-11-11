@@ -62,12 +62,10 @@ const Routes = () => {
   
   [
     {
-      path: "/",
-      element: <ProtectedRoute />,  // Use ProtectedRoute as the wrapper
-      children: [
-        { path: "profile", element: <ProfilePage /> },
-        // You can add other protected routes here as well
-      ],
+      path: "/profile",
+      element: (<ProtectedRoute>
+        <ProfilePage/>
+      </ProtectedRoute>)
     },
 
 
