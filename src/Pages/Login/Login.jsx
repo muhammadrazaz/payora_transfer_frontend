@@ -3,10 +3,11 @@ import './Login.css'
 import axios from '../../Api/axios'
 import { useAuth } from '../../Provider/AuthProvider'
 import Loader from '../../Components/Loader/Loader'
-import { GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
-  
+  const navigate = useNavigate()
   const { setToken, token,setUserDetail } = useAuth()
   const [loginData, setLoginData] = useState({})
   const [errors, setErrors] = useState([])
@@ -28,13 +29,18 @@ export default function Login() {
     data['role'] = "customer"
     setLoader(true)
     axios.post("auth/login", data).then(response => {
-      // console.log(response)
+      console.log(response)
       
       setErrors([])
-      setToken(response.data.data.tokens.access);
-      setUserDetail(JSON.stringify(response.data.data.user));
+      setToken(response.data.data.tokens.access.token);
+      setUserDetail(response.data.data.user);
       setLoginData({})
       setLoader(false)
+
+      setTimeout(()=>{
+        navigate('/profile')
+      },1000)
+     
     }).catch(error => {
       console.log(error)
       if (error.response.status === 400 || error.response.status === 401 || error.response.status === 403 || error.response.status === 404 || error.response.status === 406) {
@@ -49,7 +55,7 @@ export default function Login() {
 
   
   const responseMessage = (response) => {
-    // console.log(response,'============');
+
     setLoader(true)
     const idToken = response.credential;
     axios.post("/auth/googleSignIn", {
@@ -62,6 +68,9 @@ export default function Login() {
           setUserDetail(JSON.stringify(response.data.data.user));
           // navigate('/')
           setLoader(false)
+          setTimeout(()=>{
+            navigate('/profile')
+          },1000)
        
       })
       .catch((error) => {
@@ -196,6 +205,8 @@ export default function Login() {
 
 
             <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+          
+
 
 
             <div className="row mt-1">

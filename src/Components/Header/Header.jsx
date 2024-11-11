@@ -1,9 +1,11 @@
 import React from 'react'
 import './Header.css'
 import logo from '../../Assets/imgs/logo (1).jpeg'
+import profileIcon from '../../Assets/imgs/profile-user.png'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../Provider/AuthProvider'
 export default function Header() {
-
+  const {token} = useAuth()
     const handleMenuBtnClick = (e) => {
         const menuBtn = document.getElementById("menu-btn");
         const navLinks = document.getElementById("nav-links");
@@ -43,12 +45,14 @@ export default function Header() {
               <Link to="/">Home</Link>
               </li>
             <li>
-            <Link to="/pay-bills">Pay Bills</Link>
+            {/* <Link to="/pay-bills">Pay Bills</Link> */}
               </li>
             {/* <li><a href="#trackatransfer">Track a transfer</a></li>
             <li><a href="#paybills">Pay bills</a></li>
             <li><a href="#contact">Top up</a></li> */}
-            <li className="nav__links__btn">
+            {
+              !token && <>
+              <li className="nav__links__btn">
               <Link to='/register' className="btn">Sign Up</Link>
               {/* <a className="btn">Sign Up</a> */}
             </li>
@@ -56,13 +60,34 @@ export default function Header() {
             <Link to='/login' className="btn">Sign In</Link>
               {/* <a className="btn">Sign In</a> */}
             </li>
+              </>
+            }
+
+            {
+              token && <li className="nav__links__btn">
+              <Link to='/profile' className="btn">Profile</Link>
+                {/* <a className="btn">Sign In</a> */}
+              </li>
+            }
+            
           </ul>
-          <div className="nav__btns">
+          {!token && <div className="nav__btns">
             {/* <a className="btn btn__primary">Sign Up</a> */}
             <Link to='/register' className="btn btn__primary">Sign Up</Link>
             {/* <a className="btn" style={{background:'#9d0208ff'}}>Sign In</a> */}
             <Link to='/login' className="btn" style={{background:'#9d0208ff'}}>Sign In</Link>
+          </div>}
+
+          {
+            token &&  <div className="nav__btns">
+            {/* <a className="btn btn__primary">Sign Up</a> */}
+            <Link to='/profile' className="">
+            <img src={profileIcon} alt="" style={{height:'30px',width:'30px'}} />
+            </Link>
+           
           </div>
+          }
+          
         </nav>
         <div className="section__container header__container" id="home">
           <div className="header__image">

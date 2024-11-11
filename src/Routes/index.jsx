@@ -7,6 +7,7 @@ import Home from "../Pages/Home/Home";
 import PayBill from "../Pages/PayBill/PayBill";
 import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
 import AuthPage from "../Pages/AuthPage/AuthPage";
+import ProfilePage from "../Pages/ProfilePage/ProfilePage";
 
 const Routes = () => {
   const { token, userDetail } = useAuth();
@@ -57,10 +58,16 @@ const Routes = () => {
 
 
   ];
-  const routesForAuthenticatedOnly = [
+  const routesForAuthenticatedOnly = 
+  
+  [
     {
-      path: "/auth",
-      element: <AuthPage />
+      path: "/",
+      element: <ProtectedRoute />,  // Use ProtectedRoute as the wrapper
+      children: [
+        { path: "profile", element: <ProfilePage /> },
+        // You can add other protected routes here as well
+      ],
     },
 
 
@@ -77,7 +84,7 @@ const Routes = () => {
 
   ];
 
-
+  console.log(token,'==================')
   const router = createBrowserRouter([
     ...routesForAll,
     ...(!token ? routesForNotAuthenticatedOnly : []),
